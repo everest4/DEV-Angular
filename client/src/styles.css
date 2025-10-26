@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/* ================== LIGHT THEME ================== */
+:root {
+  --bg-color: #fafafa;
+  --text-color: #222;
+  --accent-color: #c49050; /* coffee tone */
+  --card-bg: #ffffff;
+}
+
+/* ================== DARK THEME ================== */
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #eee;
+  --accent-color: #dba15a;
+  --card-bg: #1e1e1e;
+}
+
+/* ================== BASE STYLES ================== */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  transition: background 0.3s, color 0.3s;
+}

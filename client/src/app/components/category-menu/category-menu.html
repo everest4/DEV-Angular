@@ -1,0 +1,10 @@
+<div class="menu" #menu>
+  <div
+    *ngFor="let cat of categories"
+    class="menu-item"
+    [class.active]="cat === selectedCategory"
+    (click)="selectCategory(cat, $event)"
+  >
+    {{ cat }}
+  </div>
+</div>
