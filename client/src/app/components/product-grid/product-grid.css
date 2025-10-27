@@ -1,6 +1,17 @@
-.grid {
+.product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 12px;
-  padding: 16px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 0; /* no space between cards */
+
+  /* 📱 By default (mobile): 2 cards per row */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 💻 On larger screens, let the grid fill naturally */
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }

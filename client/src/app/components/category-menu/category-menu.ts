@@ -8,7 +8,8 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
 })
 export class CategoryMenuComponent {
   // Categories shown in the menu
-  categories = ['Espresso', 'Cappuccino', 'Latte', 'Iced Coffee', 'Desserts'];
+  categories = ['All', 'Espresso', 'Cappuccino', 'Latte', 'Iced Coffee', 'Desserts'];
+
   selectedCategory = this.categories[0];
 
   // Sends selected category to parent (AppComponent)

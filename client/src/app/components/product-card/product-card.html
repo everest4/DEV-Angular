@@ -1,5 +1,5 @@
-<div class="card">
-  <img [src]="product.image" alt="{{ product.name }}">
+<div class="card" [ngStyle]="{ 'background-color': bgColor }">
+  <img [src]="product.image" [alt]="product.name" />
   <div class="info">
     <h3>{{ product.name }}</h3>
     <p>{{ product.price | currency:'EUR' }}</p>

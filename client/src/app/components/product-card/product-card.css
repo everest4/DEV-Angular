@@ -1,34 +1,23 @@
 .card {
-  background: var(--card-bg);
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  overflow: hidden;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: scale(1.02);
-}
-
-.card img {
   width: 100%;
-  height: 140px;
-  object-fit: cover;
-}
-
-.info {
-  padding: 8px;
-}
-
-.info h3 {
-  margin: 6px 0 2px;
-  font-size: 1rem;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: var(--card-bg);
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.info p {
+  color: var(--accent-color);
 }
 
-.info p {
-  margin: 0;
-  color: var(--accent-color);
-  font-weight: 500;
+.product-card {
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border-radius: 12px;
+  padding: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

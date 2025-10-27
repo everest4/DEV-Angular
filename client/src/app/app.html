@@ -1,7 +1,5 @@
-<header class="header">
-  <h1>☕ Mc Cafee</h1>
-  <button (click)="toggleTheme()">🌙</button>
-</header>
+<app-header (themeToggle)="toggleTheme()"></app-header>
 
 <app-category-menu (categoryChange)="onCategorySelected($event)"></app-category-menu>
+
 <app-product-grid [products]="filteredProducts"></app-product-grid>

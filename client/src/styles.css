@@ -1,24 +1,41 @@
-/* ================== LIGHT THEME ================== */
 :root {
-  --bg-color: #fafafa;
-  --text-color: #222;
-  --accent-color: #c49050; /* coffee tone */
-  --card-bg: #ffffff;
+  --bg-color: #ffffff;
+  --text-color: #3e2723;
+  --header-bg: #ffffff;
+  --header-text: #3e2723;
+
+  --espresso-color: rgb(253, 246, 170);
+  --cappuccino-color: rgb(190, 253, 161);
+  --latte-color: rgb(243, 176, 163);
+  --iced-coffee-color: rgb(154, 172, 249);
+  --desserts-color: rgb(105, 96, 226);
+  --pastashu-color: rgb(139, 71, 182);
+  --mokacino-color: rgb(120, 70, 15);
+  --lavazza-color: rgb(11, 107, 113);
 }
 
-/* ================== DARK THEME ================== */
-.dark-theme {
-  --bg-color: #121212;
-  --text-color: #eee;
-  --accent-color: #dba15a;
-  --card-bg: #1e1e1e;
+body.dark-theme {
+  --bg-color: #1c1815;
+  --text-color: #f3e6d8;
+  --header-bg: #1c1815;
+  --header-text: #f3e6d8;
+
+  --espresso-color: rgb(2, 9, 91);
+  --cappuccino-color: rgb(76, 10, 101);
+  --latte-color: rgb(33, 82, 93);
+  --iced-coffee-color: rgb(101, 83, 23);
+  --desserts-color: rgb(150, 159, 54);
+  --pastashu-color: rgb(126, 187, 85);
+  --mokacino-color: rgb(39, 94, 40);
+  --lavazza-color: rgb(113, 76, 11);
 }
 
-/* ================== BASE STYLES ================== */
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  transition: background 0.3s, color 0.3s;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.3s ease;
 }
