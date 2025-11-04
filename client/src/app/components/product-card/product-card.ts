@@ -21,10 +21,14 @@ ngOnInit() {
     Desserts: 'var(--desserts-color)',
     Pastashu: 'var(--pastashu-color)',
     Mokacino: 'var(--mokacino-color)',
-    Lavazza: 'var(--lavazza-color'
+    Lavazza: 'var(--lavazza-color',
   };
 
   this.bgColor = colorMap[this.product.category] || 'var(--card-bg)';
+}
+onCardClick() {
+  console.log('Clicked product:', this.product.name);
+  // Mund të hapësh modal, navigosh në detaje, etj.
 }
 
 }

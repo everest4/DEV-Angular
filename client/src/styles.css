@@ -3,6 +3,7 @@
   --text-color: #3e2723;
   --header-bg: #ffffff;
   --header-text: #3e2723;
+  --p-color: rgb(246, 69, 60);
 
   --espresso-color: rgb(253, 246, 170);
   --cappuccino-color: rgb(190, 253, 161);
@@ -28,6 +29,7 @@ body.dark-theme {
   --pastashu-color: rgb(126, 187, 85);
   --mokacino-color: rgb(39, 94, 40);
   --lavazza-color: rgb(113, 76, 11);
+  --p-color: rgb(0, 164, 155);
 }
 
 

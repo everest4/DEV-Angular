@@ -1,6 +1,6 @@
 .card {
   width: 100%;
-  height: 250px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,10 +8,25 @@
   text-align: center;
   background-color: var(--card-bg);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
+
+/* Opsionale: pak hije kur kalon mbi të */
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Efekti kur e shtyp */
+.card:active {
+  transform: scale(0.97);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Info styling */
 .info p {
-  color: var(--accent-color);
+  color: var(--p-color);
+  font-weight: 900;
 }
 
 .product-card {

@@ -21,3 +21,8 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+body, .app-root {
+  padding-bottom: 60px; /* sa është lartësia e footer-it */
+}
+

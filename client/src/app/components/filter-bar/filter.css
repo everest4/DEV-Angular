@@ -1,0 +1,39 @@
+/* Vendoset direkt poshtë header-it */
+.filter-bar {
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: rgb(142, 142, 142);
+  scrollbar-width: none;
+  margin-bottom: -25px;
+  position: fixed;
+  width: 100%;
+
+}
+
+.filter-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-list {
+  display: inline-flex;
+  width: 100%;
+}
+
+.filter-btn {
+  flex: 1 0 auto;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: black;
+  font-size: 1rem;
+  font-weight: 900;
+  padding: 0.9rem 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.filter-btn.active {
+  color: rgb(246, 69, 60);
+}

@@ -1,4 +1,4 @@
-<div class="card" [ngStyle]="{ 'background-color': bgColor }">
+<div class="card" [ngStyle]="{ 'background-color': bgColor }" (click)="onCardClick()">
   <img [src]="product.image" [alt]="product.name" />
   <div class="info">
     <h3>{{ product.name }}</h3>
