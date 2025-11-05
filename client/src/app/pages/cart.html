@@ -1,0 +1,21 @@
+<div class="cart-page">
+  <h2>Fatura Juaj</h2>
+
+  <div class="cart-items" *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="cart-item" *ngFor="let item of cartItems">
+      <span>{{ item.name }}</span>
+      <span>{{ item.price | currency:'EUR' }}</span>
+    </div>
+
+    <div class="cart-total">
+      <strong>Totali:</strong>
+      <span>{{ total | currency:'EUR' }}</span>
+    </div>
+
+    <button class="pay-btn" (click)="pay()">Dërgo Faturën</button>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Karroca është bosh.</p>
+  </ng-template>
+</div>

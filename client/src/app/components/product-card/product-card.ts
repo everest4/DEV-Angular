@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CartService } from '../services/cart_services'; // ← Rruga saktë për në services
 
 @Component({
   selector: 'app-product-card',
@@ -12,23 +13,24 @@ export class ProductCardComponent implements OnInit {
   @Input() product: any;
   bgColor = '';
 
-ngOnInit() {
-  const colorMap: any = {
-    Espresso: 'var(--espresso-color)',
-    Cappuccino: 'var(--cappuccino-color)',
-    Latte: 'var(--latte-color)',
-    'Iced Coffee': 'var(--iced-coffee-color)',
-    Desserts: 'var(--desserts-color)',
-    Pastashu: 'var(--pastashu-color)',
-    Mokacino: 'var(--mokacino-color)',
-    Lavazza: 'var(--lavazza-color',
-  };
+  constructor(private cartService: CartService) {}
 
-  this.bgColor = colorMap[this.product.category] || 'var(--card-bg)';
-}
-onCardClick() {
-  console.log('Clicked product:', this.product.name);
-  // Mund të hapësh modal, navigosh në detaje, etj.
-}
+  ngOnInit() {
+    const colorMap: any = {
+      Espresso: 'var(--espresso-color)',
+      Cappuccino: 'var(--cappuccino-color)',
+      Latte: 'var(--latte-color)',
+      'Iced Coffee': 'var(--iced-coffee-color)',
+      Desserts: 'var(--desserts-color)',
+      Pastashu: 'var(--pastashu-color)',
+      Mokacino: 'var(--mokacino-color)',
+      Lavazza: 'var(--lavazza-color)',
+    };
+    this.bgColor = colorMap[this.product.category] || 'var(--card-bg)';
+  }
 
+  onCardClick() {
+    this.cartService.addToCart(this.product);
+    console.log('Produkti u shtua në karrocë:', this.product);
+  }
 }

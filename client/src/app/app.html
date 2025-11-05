@@ -1,13 +1,10 @@
 <app-header (themeToggle)="toggleTheme()"></app-header>
 
-<!-- Filter bar poshtë headerit -->
 <app-filter-bar (categorySelected)="onCategorySelected($event)"></app-filter-bar>
-
-<!-- Menu e kategorive (nëse dëshiron ta mbash) -->
 <app-category-menu (categoryChange)="onCategorySelected($event)"></app-category-menu>
-
-<!-- Produktet -->
 <app-product-grid [products]="filteredProducts"></app-product-grid>
 
 <app-footer-bar></app-footer-bar>
 
+<!-- Këtu shfaqet faqja e karrocës -->
+<router-outlet></router-outlet>

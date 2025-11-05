@@ -1,6 +1,6 @@
 <header class="header">
   <div class="logo">
-    <img src="assets/icon.jpg" alt="McCafee Logo" />
+    <img src="assets/logo.png" alt="McCafee Logo" />
     <h1>McCafee</h1>
   </div>
 
@@ -8,9 +8,16 @@
     <button class="icon-btn">
       <i class="material-icons">search</i>
     </button>
-    <button class="icon-btn">
-      <i class="material-icons">shopping_cart</i>
-    </button>
+
+    <div class="cart-wrapper">
+      <button class="icon-btn" routerLink="/cart">
+        <i class="material-icons">shopping_cart</i>
+        <span class="cart-count" *ngIf="cartService.getItems().length > 0">
+          {{ cartService.getItems().length }}
+        </span>
+      </button>
+    </div>
+
     <button class="icon-btn" (click)="toggleTheme()">
       <i class="material-icons">dark_mode</i>
     </button>
