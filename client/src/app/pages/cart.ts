@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule, CurrencyPipe } from '@angular/common';
 import { CartService } from '../components/services/cart_services';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, CurrencyPipe],
+  imports: [CommonModule, CurrencyPipe], // ✅ Shto CurrencyPipe këtu
   templateUrl: './cart.html',
   styleUrls: ['./cart.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent {
   cartItems: any[] = [];
-  total = 0;
+  total: number = 0;
+  successMessage: string = '';
 
   constructor(private cartService: CartService, private router: Router) {}
 
@@ -22,13 +23,17 @@ export class CartComponent implements OnInit {
   }
 
   pay() {
-    alert('Fatura u pagua me sukses!');
+    if (this.cartItems.length === 0) return;
+
+    this.successMessage = 'FATURA U DËRGUA ME SUKSES ✅';
     this.cartService.clearCart();
-    this.cartItems = [];
-    this.total = 0;
+
+    setTimeout(() => {
+      this.router.navigate(['/']);
+    }, 3000);
   }
 
   back() {
-    this.router.navigate(['/']); // ✅ Do të kthejë te faqja me produktet
+    this.router.navigate(['/']);
   }
 }

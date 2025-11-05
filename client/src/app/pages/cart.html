@@ -1,6 +1,10 @@
 <div class="cart-page">
   <h2>Fatura Juaj</h2>
 
+  <div *ngIf="successMessage" class="success-message">
+    {{ successMessage }}
+  </div>
+
   <div class="cart-items" *ngIf="cartItems.length > 0; else emptyCart">
     <div class="cart-item" *ngFor="let item of cartItems">
       <span>{{ item.name }} (x{{ item.quantity }})</span>
