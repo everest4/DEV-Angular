@@ -2,12 +2,17 @@
   display: grid;
   width: 100%;
   margin: 0;
-  padding-top: 25px;
-  padding-bottom: 55px;
-  gap: 0; 
-
+  padding-top: 91px;
+  padding-bottom: 0px;
+  gap: 0;
   grid-template-columns: repeat(2, 1fr);
+
+
+  height: calc(100vh - 91px); /* 91px = header + filter */
+  overflow-y: auto;
+  overscroll-behavior: contain; /* stops the “bounce” effect */
 }
+
 
 @media (min-width: 768px) {
   .product-grid {

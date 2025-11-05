@@ -6,10 +6,16 @@
   background-color: var(--header-bg, #fff);
   color: var(--header-text, #3e2723);
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  position: sticky;
+
+  /* 🔒 make it stay fixed always */
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+
   z-index: 1000;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 0;
 }
 
 .logo {

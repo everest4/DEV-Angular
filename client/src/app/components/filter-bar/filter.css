@@ -1,13 +1,15 @@
-/* Vendoset direkt poshtë header-it */
 .filter-bar {
+  position: fixed;           /* stays stuck like footer */
+  top: 60px;                 /* adjust this to match your header height */
+  left: 0;
+  right: 0;
+  z-index: 100;              /* keeps it above product grid */
   overflow-x: auto;
   white-space: nowrap;
   background-color: rgb(142, 142, 142);
   scrollbar-width: none;
-  margin-bottom: -25px;
-  position: fixed;
   width: 100%;
-
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .filter-bar::-webkit-scrollbar {
