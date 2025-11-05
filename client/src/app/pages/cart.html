@@ -3,8 +3,8 @@
 
   <div class="cart-items" *ngIf="cartItems.length > 0; else emptyCart">
     <div class="cart-item" *ngFor="let item of cartItems">
-      <span>{{ item.name }}</span>
-      <span>{{ item.price | currency:'EUR' }}</span>
+      <span>{{ item.name }} (x{{ item.quantity }})</span>
+      <span>{{ (item.price * item.quantity) | currency:'EUR' }}</span>
     </div>
 
     <div class="cart-total">
@@ -18,4 +18,6 @@
   <ng-template #emptyCart>
     <p>Karroca është bosh.</p>
   </ng-template>
+
+  <button class="back-btn" (click)="back()">← Kthehu mbrapa</button>
 </div>

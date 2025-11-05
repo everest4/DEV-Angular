@@ -11,8 +11,14 @@ export class CartService {
   cartCount$ = this.cartCount.asObservable();
 
   addToCart(product: any) {
-    this.items.push(product);
-    this.cartCount.next(this.items.length);
+    const existingItem = this.items.find(item => item.name === product.name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      this.items.push({ ...product, quantity: 1 });
+    }
+
+    this.updateCount();
   }
 
   getItems() {
@@ -20,11 +26,16 @@ export class CartService {
   }
 
   getTotal() {
-    return this.items.reduce((total, item) => total + item.price, 0);
+    return this.items.reduce((total, item) => total + item.price * item.quantity, 0);
   }
 
   clearCart() {
     this.items = [];
-    this.cartCount.next(0);
+    this.updateCount();
+  }
+
+  private updateCount() {
+    const totalCount = this.items.reduce((sum, item) => sum + item.quantity, 0);
+    this.cartCount.next(totalCount);
   }
 }
