@@ -34,9 +34,25 @@ export class AppComponent {
   onCategorySelected(category: string) {
     this.selectedCategory = category;
   }
+searchTerm = '';
 
-  get filteredProducts() {
-    if (this.selectedCategory === 'All') return this.products;
-    return this.products.filter(p => p.category === this.selectedCategory);
+onSearch(term: string) {
+  this.searchTerm = term;
+}
+
+get filteredProducts() {
+  let filtered = this.products;
+
+  if (this.selectedCategory !== 'All') {
+    filtered = filtered.filter(p => p.category === this.selectedCategory);
   }
+
+  if (this.searchTerm.trim() !== '') {
+    filtered = filtered.filter(p =>
+      p.name.toLowerCase().includes(this.searchTerm)
+    );
+  }
+
+  return filtered;
+}
 }

@@ -80,3 +80,24 @@
   border-radius: 50%;
   padding: 2px 6px;
 }
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  margin-left: 10px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 180px;
+  transition: width 0.3s;
+}
+
+.search-input:focus {
+  width: 220px;
+  border-color: #666;
+}

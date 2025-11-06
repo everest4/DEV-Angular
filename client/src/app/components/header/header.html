@@ -5,10 +5,22 @@
   </div>
 
   <div class="actions">
-    <button class="icon-btn">
-      <i class="material-icons">search</i>
-    </button>
+    <!-- SEARCH -->
+    <div class="search-container">
+      <button class="icon-btn" (click)="toggleSearch()">
+        <i class="material-icons">search</i>
+      </button>
 
+      <input
+        *ngIf="showSearch"
+        type="text"
+        placeholder="Kërko produkt..."
+        (input)="onSearch($event)"
+        class="search-input"
+      />
+    </div>
+
+    <!-- CART -->
     <div class="cart-wrapper">
       <button class="icon-btn" routerLink="/cart">
         <i class="material-icons">shopping_cart</i>
@@ -18,6 +30,7 @@
       </button>
     </div>
 
+    <!-- THEME -->
     <button class="icon-btn" (click)="toggleTheme()">
       <i class="material-icons">dark_mode</i>
     </button>

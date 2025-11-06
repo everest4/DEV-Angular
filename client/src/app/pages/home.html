@@ -1,0 +1,5 @@
+<div class="home-page">
+  <app-category-menu (categoryChange)="onCategorySelected($event)"></app-category-menu>
+  <app-filter-bar></app-filter-bar>
+  <app-product-grid [products]="filteredProducts"></app-product-grid>
+</div>
