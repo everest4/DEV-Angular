@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CartService } from '../../components/services/cart_services';
@@ -12,9 +12,6 @@ import { CartService } from '../../components/services/cart_services';
 })
 export class HeaderComponent implements OnInit {
   cartCount = 0;
-  showSearch = false;
-
-  @Output() search = new EventEmitter<string>();
 
   constructor(public cartService: CartService) {}
 
@@ -26,13 +23,5 @@ export class HeaderComponent implements OnInit {
 
   toggleTheme() {
     document.body.classList.toggle('dark-theme');
-  }
-
-  toggleSearch() {
-    this.showSearch = !this.showSearch;
-  }
-
-  onSearch(event: any) {
-    this.search.emit(event.target.value.toLowerCase());
   }
 }

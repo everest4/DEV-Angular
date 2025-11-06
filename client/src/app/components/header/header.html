@@ -5,21 +5,6 @@
   </div>
 
   <div class="actions">
-    <!-- SEARCH -->
-    <div class="search-container">
-      <button class="icon-btn" (click)="toggleSearch()">
-        <i class="material-icons">search</i>
-      </button>
-
-      <input
-        *ngIf="showSearch"
-        type="text"
-        placeholder="Kërko produkt..."
-        (input)="onSearch($event)"
-        class="search-input"
-      />
-    </div>
-
     <!-- CART -->
     <div class="cart-wrapper">
       <button class="icon-btn" routerLink="/cart">
